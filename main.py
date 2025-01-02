@@ -1,8 +1,16 @@
-x1=int(input("x1:"))
-x2=int(input("x2:"))
-y1=int(input("y1:"))
-y2=int(input("y2:"))
-xdeger=x2-x1
-ydeger=y2-y1
-hip=(xdeger**2+ydeger**2)**(0.5)
-print(hip)
+# Kullanıcıdan bir sayı al
+sayi = input("Bir sayı girin: ")
+
+# Kullanıcının geçerli bir sayı girdiğinden emin olun
+if sayi.isdigit():
+    sayi = int(sayi)
+    
+    # Sayıyı büyükten küçüğe kadar sıralayıp toplama işlemi yap
+    toplam = 0
+    for i in range(sayi, -1, -1):  # Büyükten küçüğe doğru sıralama
+        toplam += i
+
+    # Sonucu ekrana yazdır
+    print("{} sayısına kadar büyükten küçüğe sıralanıp toplamları: {}".format(sayi, toplam))
+else:
+    print("Lütfen geçerli bir tam sayı girin.")
